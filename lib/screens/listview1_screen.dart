@@ -15,6 +15,7 @@ class Listview1Screen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Listview Type 1'),
+          elevation: 0,
         ),
         body: ListView(
           children: [
@@ -22,6 +23,7 @@ class Listview1Screen extends StatelessWidget {
                 .map((team) => ListTile(
                       title: Text(team),
                       trailing: const Icon(Icons.arrow_forward_ios_outlined),
+                      iconColor: Colors.pink[300],
                     ))
                 .toList(),
 
