@@ -19,6 +19,7 @@ class CardScreen extends StatelessWidget {
               height: 10,
             ),
             CustomCardType2(
+              name: 'We are coming, Canada!',
               imageUrl:
                   'https://images.unsplash.com/photo-1537824598505-99ee03483384?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
             ),
@@ -26,8 +27,9 @@ class CardScreen extends StatelessWidget {
               height: 10,
             ),
             CustomCardType2(
+              name: 'Mana de Toscana',
               imageUrl:
-                  ' https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+                  'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=975&q=80',
             ),
             SizedBox(
               height: 10,

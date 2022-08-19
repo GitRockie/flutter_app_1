@@ -3,8 +3,10 @@ import 'package:flutter_app_1/theme/app_theme.dart';
 
 class CustomCardType2 extends StatelessWidget {
   final String imageUrl;
+  final String? name;
 
-  const CustomCardType2({Key? key, required this.imageUrl}) : super(key: key);
+  const CustomCardType2({Key? key, required this.imageUrl, this.name})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +24,15 @@ class CustomCardType2 extends StatelessWidget {
           fit: BoxFit.cover,
           fadeInDuration: const Duration(milliseconds: 300),
         ),
-        Container(
-            alignment: AlignmentDirectional.centerEnd,
-            padding: const EdgeInsets.only(
-              right: 20,
-              top: 10,
-              bottom: 10,
-            ),
-            child: const Text('We are coming! Toscana!'))
+        if (name != null)
+          Container(
+              alignment: AlignmentDirectional.centerEnd,
+              padding: const EdgeInsets.only(
+                right: 20,
+                top: 10,
+                bottom: 10,
+              ),
+              child: Text(name!))
       ]),
     );
   }
