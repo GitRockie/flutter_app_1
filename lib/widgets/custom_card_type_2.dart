@@ -13,8 +13,8 @@ class CustomCardType2 extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-      elevation: 10,
-      shadowColor: AppTheme.primary.withOpacity(0.5),
+      elevation: 7,
+      shadowColor: AppTheme.primary.withOpacity(0.3),
       child: Column(children: [
         FadeInImage(
           image: NetworkImage(imageUrl),
