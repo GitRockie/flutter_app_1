@@ -42,7 +42,7 @@ class CardScreen extends StatelessWidget {
               height: 20,
             ),
             CustomCardType2(
-              name: 'Las ondas de Patagona',
+              name: 'Las ondas de Patagonia',
               imageUrl:
                   'https://images.unsplash.com/photo-1614586125858-e695dd97d1b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGxhbmRzY2FwZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60',
             ),

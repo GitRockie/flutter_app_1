@@ -1,9 +1,53 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AlertScreen extends StatelessWidget {
   const AlertScreen({Key? key}) : super(key: key);
 
-  void showAlertDialog(BuildContext context) {
+  void showAlertDialogIOS(BuildContext context) {
+    showCupertinoDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: const Text('Watta window'),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Text(
+                    'Otta Flutter, develop factor, app creator step by chapter. Good vibes in your dialog window! '),
+                SizedBox(height: 10),
+                FlutterLogo(size: 100)
+              ],
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text(
+                    'Ok',
+                  ),
+                ),
+              )
+            ],
+          );
+        });
+  }
+
+  void showAlertDialogAndroid(BuildContext context) {
     showDialog(
         barrierDismissible: false,
         context: context,
@@ -17,7 +61,7 @@ class AlertScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Text(
-                    'We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies'),
+                    'Otta Flutter, develop factor, app creator step by chapter. Good vibes in your dialog window! '),
                 SizedBox(height: 10),
                 FlutterLogo(size: 100)
               ],
@@ -26,8 +70,18 @@ class AlertScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 10),
                 child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: const Text('Cancel')),
+                    child: const Text('Ok')),
               )
             ],
           );
@@ -41,7 +95,11 @@ class AlertScreen extends StatelessWidget {
         child: ElevatedButton(
             /* style: ElevatedButton.styleFrom(
               primary: Colors.pink, shape: const StadiumBorder(), elevation: 0),*/
-            onPressed: () => showAlertDialog(context),
+            // onPressed: () => showAlertDialogAndroid(context),
+            onPressed: () => Platform.isAndroid
+                ? showAlertDialogAndroid(context)
+                : showAlertDialogIOS(context),
+
             /* style: ElevatedButton.styleFrom(
               primary: Colors.pink, shape: const StadiumBorder(), elevation: 0),*/
             child: const Padding(
