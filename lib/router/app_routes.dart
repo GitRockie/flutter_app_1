@@ -37,10 +37,10 @@ class AppRoutes {
     ),
 
     MenuOption(
-      route: 'avatar',
-      nameRoot: 'Avatar',
-      screen: const AvatarScreen(),
-      icon: Icons.account_circle_outlined,
+      route: 'animated',
+      nameRoot: 'Animated Container',
+      screen: const AnimatedScreen(),
+      icon: Icons.animation_outlined,
     ),
   ];
 

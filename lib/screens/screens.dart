@@ -1,3 +1,5 @@
+export 'package:flutter_app_1/screens/animated_screen.dart';
+
 export 'package:flutter_app_1/screens/avatar_screen.dart';
 
 export 'package:flutter_app_1/screens/alert_screen.dart';
