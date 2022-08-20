@@ -32,11 +32,13 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
         title: const Text('Animate Me'),
       ),
       body: Center(
-        child: Container(
-          width: _width,
-          height: _height,
-          decoration: BoxDecoration(color: _color, borderRadius: _borderRadius),
-        ),
+        child: AnimatedContainer(
+            width: _width,
+            height: _height,
+            decoration:
+                BoxDecoration(color: _color, borderRadius: _borderRadius),
+            duration: const Duration(milliseconds: 400),
+            curve: Curves.easeInOutCubic),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: changeShape,
