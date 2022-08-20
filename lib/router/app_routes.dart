@@ -17,7 +17,7 @@ class AppRoutes {
 
     MenuOption(
       route: 'listview1',
-      nameRoot: 'Lisview 1',
+      nameRoot: 'Listview 1',
       screen: const Listview1Screen(),
       icon: Icons.list,
     ),
