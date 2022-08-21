@@ -27,40 +27,47 @@ class InputsScreen extends StatelessWidget {
           child: Form(
             key: myFormKey,
             child: Column(children: [
-              const CustomInputField(
+              CustomInputField(
                 labelText: 'Name',
                 hintText: 'Username',
                 icon: Icons.perm_identity_outlined,
                 suffixIcon: Icons.assignment_outlined,
+                formProperty: 'first_name',
+                formValues: formValues,
               ),
               const SizedBox(
                 height: 30,
               ),
-              const CustomInputField(
+              CustomInputField(
                 labelText: 'Surname',
                 hintText: 'Put your surname',
                 icon: Icons.drive_file_rename_outline,
                 suffixIcon: Icons.wysiwyg,
+                formProperty: 'last_name',
+                formValues: formValues,
               ),
               const SizedBox(
                 height: 30,
               ),
-              const CustomInputField(
+              CustomInputField(
                 labelText: 'e-mail',
                 hintText: 'Put your e-mail',
                 icon: Icons.contact_mail,
                 suffixIcon: Icons.alternate_email,
                 keyboardType: TextInputType.emailAddress,
+                formValues: formValues,
+                formProperty: 'email',
               ),
               const SizedBox(
                 height: 30,
               ),
-              const CustomInputField(
+              CustomInputField(
                 labelText: 'password',
                 hintText: 'Create your password',
                 icon: Icons.password_outlined,
                 suffixIcon: Icons.visibility_off,
-                obscureText: true,
+                obscureText: true, formValues: formValues,
+                formProperty: 'password',
 
                 //keyboardType: TextInputType.visiblePassword,
               ),
