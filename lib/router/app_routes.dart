@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_app_1/models/models.dart';
+import 'package:flutter_app_1/screens/listview_builder_screen.dart';
 import 'package:flutter_app_1/screens/screens.dart';
 
 class AppRoutes {
@@ -55,6 +56,12 @@ class AppRoutes {
       nameRoot: 'Slide & Check',
       screen: const SliderScreen(),
       icon: Icons.slow_motion_video_rounded,
+    ),
+    MenuOption(
+      route: 'listviewbuilder',
+      nameRoot: 'Infinite Scroll & Pull to Refresh',
+      screen: const ListviewBuilderScreen(),
+      icon: Icons.corporate_fare,
     ),
   ];
 
