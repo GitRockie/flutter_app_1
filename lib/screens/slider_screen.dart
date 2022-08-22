@@ -10,6 +10,7 @@ class SliderScreen extends StatefulWidget {
 
 class _SliderScreenState extends State<SliderScreen> {
   double _sliderValue = 100;
+  bool _sliderEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -17,30 +18,56 @@ class _SliderScreenState extends State<SliderScreen> {
       appBar: AppBar(
         title: const Text('Slide and Check'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Slider.adaptive(
-                min: 50,
-                max: 400,
-                activeColor: AppTheme.primary,
-                //divisions: 10,
-                value: _sliderValue,
-                onChanged: (value) {
-                  _sliderValue = value;
-                  setState(() {});
-                }),
-            Image(
-              image: const NetworkImage(
-                  'http://clipart-library.com/images_k/spiderman-png-transparent/spiderman-png-transparent-8.png'),
-              fit: BoxFit.contain,
-              width: _sliderValue,
+      body: Column(
+        children: [
+          Slider.adaptive(
+              min: 50,
+              max: 400,
+              activeColor: AppTheme.primary,
+              //divisions: 10,
+              value: _sliderValue,
+              onChanged: _sliderEnabled
+                  ? (value) {
+                      _sliderValue = value;
+                      setState(() {});
+                    }
+                  : null),
+          /* Checkbox(
+              value: _sliderEnabled,
+              onChanged: (value) {
+                _sliderEnabled = value ?? true;
+                setState(() {});
+              }),*/
+          /*Switch(
+      value: _sliderEnabled,
+      onChanged: (value) => setState(() {
+            _sliderEnabled = value;
+          })),*/
+          CheckboxListTile(
+              activeColor: AppTheme.primary,
+              title: const Text('Check the Abbility'),
+              value: _sliderEnabled,
+              onChanged: (value) => setState(() {
+                    _sliderEnabled = value ?? true;
+                  })),
+          SwitchListTile.adaptive(
+              title: const Text('Switch the Ability'),
+              value: _sliderEnabled,
+              onChanged: (value) => setState(() {
+                    _sliderEnabled = value;
+                  })),
+          const AboutListTile(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Image(
+                image: const NetworkImage(
+                    'http://clipart-library.com/images_k/spiderman-png-transparent/spiderman-png-transparent-8.png'),
+                fit: BoxFit.contain,
+                width: _sliderValue,
+              ),
             ),
-            const SizedBox(
-              height: 100,
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
