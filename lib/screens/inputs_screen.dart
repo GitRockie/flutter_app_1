@@ -88,6 +88,9 @@ class InputsScreen extends StatelessWidget {
                   formValues['role'] = value ?? 'Admin';
                 },
               ),
+              const SizedBox(
+                height: 30,
+              ),
               ElevatedButton(
                 child: const SizedBox(
                     width: double.infinity, child: Center(child: Text('Save'))),
